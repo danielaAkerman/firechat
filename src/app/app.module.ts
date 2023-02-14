@@ -14,6 +14,10 @@ import { environment } from '../environments/environment';
 import { ChatComponent } from './components/chat/chat.component';
 
 // Servicios
+import { ChatService } from './providers/chat.service';
+
+import {FIREBASE_OPTIONS} from "@angular/fire/compat"
+
 
 
 @NgModule({
@@ -22,11 +26,9 @@ import { ChatComponent } from './components/chat/chat.component';
     BrowserModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    FormsModule
+    FormsModule,
   ],
-  providers: [
-
-  ],
+  providers: [ChatService, { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
