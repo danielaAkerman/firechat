@@ -13,6 +13,9 @@ import { environment } from '../environments/environment';
 // Componentes
 import { ChatComponent } from './components/chat/chat.component';
 
+// Servicios
+
+
 @NgModule({
   declarations: [AppComponent, ChatComponent],
   imports: [
@@ -21,7 +24,9 @@ import { ChatComponent } from './components/chat/chat.component';
     provideFirestore(() => getFirestore()),
     FormsModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
