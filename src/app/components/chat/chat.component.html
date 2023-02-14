@@ -1,0 +1,59 @@
+<h1>Chat</h1>
+<hr />
+
+<div class="app-messages" id="app-messages">
+  <div class="text-end">
+    <span class="badge text-bg-primary">Daniela</span>
+    <p>Mensaje de chat</p>
+  </div>
+  <div>
+    <span class="badge text-bg-success">Luci</span>
+    <p>Hola madre</p>
+  </div>
+  <div>
+    <span class="badge text-bg-success">Luci</span>
+    <p>Hola madre</p>
+  </div>
+  <div>
+    <span class="badge text-bg-success">Luci</span>
+    <p>Hola madre</p>
+  </div>
+  <div>
+    <span class="badge text-bg-success">Luci</span>
+    <p>Hola madre</p>
+  </div>
+  <div>
+    <span class="badge text-bg-success">Luci</span>
+    <p>Hola madre</p>
+  </div>
+  <div>
+    <span class="badge text-bg-success">Luci</span>
+    <p>Hola madre</p>
+  </div>
+  <div>
+    <span class="badge text-bg-success">Luci</span>
+    <p>Hola madre</p>
+  </div>
+  <div>
+    <span class="badge text-bg-success">Luci</span>
+    <p>Hola madre</p>
+  </div>
+
+</div>
+
+<hr />
+
+<input
+  type="text"
+  name="message"
+  class="form-control"
+  [(ngModel)]="message"
+  (keyup.enter)="send_message()"
+  placeholder="Nuevo mensaje"
+/>
+
+<!-- <ul>
+    <li *ngFor="let item of item$ | async">
+      {{ item.name }}: {{ item.message }}
+    </li>
+  </ul> -->
