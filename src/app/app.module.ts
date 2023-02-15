@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import {FIREBASE_OPTIONS} from "@angular/fire/compat"
 
 import { environment } from '../environments/environment';
 
@@ -16,7 +17,6 @@ import { ChatComponent } from './components/chat/chat.component';
 // Servicios
 import { ChatService } from './providers/chat.service';
 
-import {FIREBASE_OPTIONS} from "@angular/fire/compat"
 
 
 

@@ -2,43 +2,19 @@
 <hr />
 
 <div class="app-messages" id="app-messages">
-  <div class="text-end">
+  <!-- <div class="text-end">
     <span class="badge text-bg-primary">Daniela</span>
     <p>Mensaje de chat</p>
   </div>
   <div>
     <span class="badge text-bg-success">Luci</span>
     <p>Hola madre</p>
-  </div>
-  <div>
-    <span class="badge text-bg-success">Luci</span>
-    <p>Hola madre</p>
-  </div>
-  <div>
-    <span class="badge text-bg-success">Luci</span>
-    <p>Hola madre</p>
-  </div>
-  <div>
-    <span class="badge text-bg-success">Luci</span>
-    <p>Hola madre</p>
-  </div>
-  <div>
-    <span class="badge text-bg-success">Luci</span>
-    <p>Hola madre</p>
-  </div>
-  <div>
-    <span class="badge text-bg-success">Luci</span>
-    <p>Hola madre</p>
-  </div>
-  <div>
-    <span class="badge text-bg-success">Luci</span>
-    <p>Hola madre</p>
-  </div>
-  <div>
-    <span class="badge text-bg-success">Luci</span>
-    <p>Hola madre</p>
-  </div>
+  </div> -->
 
+  <div class="text-end" *ngFor="let chat of _cs.chats">
+    <span class="badge text-bg-primary">{{chat.from}}</span>
+    <p>{{chat.message}}</p>
+  </div>
 </div>
 
 <hr />
