@@ -1,6 +1,6 @@
 export interface Message {
   from: string;
   message: string;
-  fecha?: number;
+  date?: number;
   uid?: string;
 }
