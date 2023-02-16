@@ -46,6 +46,7 @@ export class ChatService {
   }
   logout() {
     this.user = {};
+    localStorage.setItem('user', this.user.toString());
     this.auth.signOut();
   }
 

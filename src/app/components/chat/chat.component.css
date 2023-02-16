@@ -3,23 +3,26 @@ input {
   border: none;
   margin-bottom: 5px;
 }
+
 .app-messages {
   height: 400px;
   overflow: scroll;
 }
+
 input {
   background: none !important;
 }
+
 .text-end{
     margin-right: 5px;
 }
 
 .app-messages::-webkit-scrollbar {
-    width: 5px;               /* width of the entire scrollbar */
+    width: 5px;
   }
   
   .app-messages::-webkit-scrollbar-track {
-    background: none;        /* color of the tracking area */
+    background: none;
   }
   
   .app-messages::-webkit-scrollbar-thumb {

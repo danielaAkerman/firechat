@@ -12,6 +12,6 @@ export class LoginComponent {
   ingresar(proveedor: string) {
     console.log(proveedor);
 
-    this._cs.login(proveedor)
+    this._cs.login(proveedor);
   }
 }
