@@ -11,7 +11,7 @@
     <app-login></app-login>
   </div>
 
-  <div class="chat-window">
+  <div class="chat-window" *ngIf="_cs.user.uid">
     <app-chat></app-chat>
   </div>
 </div>

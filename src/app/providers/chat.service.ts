@@ -68,11 +68,11 @@ export class ChatService {
   }
 
   uploadMessages(texto: string) {
-    // FALTA uid DEL USER
     let message: Message = {
-      from: 'Dani',
+      from: this.user.name,
       message: texto,
       date: new Date().getTime(),
+      uid: this.user.uid,
     };
 
     return this.itemsCollection.add(message);

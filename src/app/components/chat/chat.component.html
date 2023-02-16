@@ -2,18 +2,18 @@
 <hr />
 
 <div class="app-messages" id="app-messages">
-  <!-- <div class="text-end">
-    <span class="badge text-bg-primary">Daniela</span>
-    <p>Mensaje de chat</p>
-  </div>
-  <div>
-    <span class="badge text-bg-success">Luci</span>
-    <p>Hola madre</p>
-  </div> -->
 
-  <div class="text-end" *ngFor="let chat of _cs.chats">
-    <span class="badge text-bg-primary">{{chat.from}}</span>
-    <p>{{chat.message}}</p>
+  <div
+    *ngFor="let chat of _cs.chats"
+    [ngClass]="{ 'text-end': _cs.user.uid == chat.uid }"
+  >
+    <span class="badge"
+      [ngClass]="{ 'bg-primary': _cs.user.uid == chat.uid, 
+                   'bg-success': _cs.user.uid != chat.uid
+      }"
+      >{{ chat.from }}</span
+    >
+    <p>{{ chat.message }}</p>
   </div>
 </div>
 
