@@ -48,3 +48,6 @@ form {
 
   max-width: 312px;
 }
+input, textarea{
+  background: none!important;
+}

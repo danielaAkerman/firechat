@@ -1,17 +1,13 @@
 <div class="app-messages" id="app-messages">
   <div
     *ngFor="let chat of _cs.chats"
-    [ngClass]="{ 'text-end': _cs.user.uid == chat.uid }"
+    [ngClass]="{ 'text-end mine': _cs.user.uid == chat.uid, 
+                         'other': _cs.user.uid != chat.uid }"
   >
-    <span
-      class="badge"
-      [ngClass]="{
-        'bg-primary': _cs.user.uid == chat.uid,
-        'bg-success': _cs.user.uid != chat.uid
-      }"
-      >{{ chat.from }}</span
-    >
-    <p>{{ chat.message }}</p>
+    <span class="fst-italic fw-light"
+
+    >{{ chat.from }}</span>
+    <p class="text-message">{{ chat.message }}</p>
   </div>
 </div>
 
@@ -25,9 +21,3 @@
   (keyup.enter)="send_message()"
   placeholder="Nuevo mensaje"
 />
-
-<!-- <ul>
-    <li *ngFor="let item of item$ | async">
-      {{ item.name }}: {{ item.message }}
-    </li>
-  </ul> -->

@@ -12,7 +12,7 @@ export class NavbarComponent {
 
   temaOscuro() {
     document.querySelector('body')!.setAttribute('data-bs-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
+    // localStorage.setItem('theme', 'dark');
     document
       .querySelector('#switch-mode')!
       .setAttribute('src', 'assets/sun-fill.svg');
@@ -20,7 +20,7 @@ export class NavbarComponent {
 
   temaClaro() {
     document.querySelector('body')!.setAttribute('data-bs-theme', 'light');
-    localStorage.setItem('theme', 'light');
+    // localStorage.setItem('theme', 'light');
     document
       .querySelector('#switch-mode')!
       .setAttribute('src', 'assets/moon-fill.svg');

@@ -5,7 +5,7 @@ input {
 }
 
 .app-messages {
-  height: 400px;
+  height: calc(100vh - 160px);
   overflow: scroll;
 }
 
@@ -13,25 +13,51 @@ input {
   background: none !important;
 }
 
-.text-end{
-    margin-right: 5px;
+.text-end {
+  margin-right: 5px;
+}
+
+.mine,
+.other {
+  width: fit-content;
+  max-width: 300px;
+  /* border: 1px solid; */
+  padding: 5px;
+  overflow: hidden;
+}
+.mine {
+  border-radius: 20px 0px 20px 20px;
+  margin: auto 0px 2px auto;
+  /* background-color: rgba(161, 255, 142, 0.24); */
+  padding-left: 10px;
+}
+
+.other {
+  border-radius: 0px 20px 20px 20px;
+  margin: auto 0px 2px 0px;
+  /* background-color: rgba(142, 238, 255, 0.24); */
+  padding-right: 10px;
+}
+
+.text-message {
+  margin: 0;
 }
 
 .app-messages::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  .app-messages::-webkit-scrollbar-track {
-    background: none;
-  }
-  
-  .app-messages::-webkit-scrollbar-thumb {
-    background-color:darkslategrey;
-    border-radius: 20px;
-  }
+  width: 5px;
+}
 
-  .app-messages::-webkit-scrollbar-button:increment,
-  .app-messages::-webkit-scrollbar-button,
-  .app-messages::-webkit-scrollbar-corner {
-    display: none;
-} 
+.app-messages::-webkit-scrollbar-track {
+  background: none;
+}
+
+.app-messages::-webkit-scrollbar-thumb {
+  background-color: darkslategrey;
+  border-radius: 20px;
+}
+
+.app-messages::-webkit-scrollbar-button:increment,
+.app-messages::-webkit-scrollbar-button,
+.app-messages::-webkit-scrollbar-corner {
+  display: none;
+}
