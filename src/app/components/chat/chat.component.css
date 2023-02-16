@@ -4,6 +4,6 @@ input{
     margin-bottom: 5px;
 }
 .app-messages{
-    height: 300px;
+    height: 400px;
     overflow: scroll;
 }

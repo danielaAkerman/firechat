@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 10px;
+  border-bottom: 1px black;
 }
 
 .navbar-brand, .navbar-profile {
@@ -22,4 +22,20 @@
   width: 40px;
   height: 40px;
   border-radius: 100%;
+}
+
+@media (max-width: 530px) {
+  .title {
+    display: none;
+  }
+}
+
+.nav-item{
+  list-style: none;
+}
+
+.dropdown-toggle{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

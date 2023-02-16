@@ -2,9 +2,29 @@
   <div class="navbar-brand">
     <img src="assets/chat.png" alt="Bootstrap" width="30" height="24" />
     <p class="fs-4 title">Firechat</p>
+    <button class="btn rounded-fill">
+      <img src="assets/moon-fill.svg" />
+    </button>
   </div>
 
-  <div class="navbar-profile">
+  <div class="navbar-profile" *ngIf="_cs.user.uid">
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <p class="fs-6 text-end title">{{ _cs.user.name }}</p>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="#" (click)="_cs.logout()">Log out</a>
+        </li>
+      </ul>
+    </li>
+
     <div class="img-profile-container">
       <img [src]="_cs.user.thumbnail" class="img-profile" alt="Profile" />
     </div>
