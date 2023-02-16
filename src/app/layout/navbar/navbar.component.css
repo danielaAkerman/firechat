@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+}
+
+.navbar-brand, .navbar-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.title {
+  margin: 0;
+}
+
+.img-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
