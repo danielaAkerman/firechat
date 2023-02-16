@@ -24,6 +24,7 @@ export class ChatService {
   constructor(private afs: AngularFirestore, public auth: AngularFireAuth) {
     this.auth.authState.subscribe((u) => {
       if (!u) {
+        console.log({ user: null });
         return;
       }
 
@@ -37,9 +38,14 @@ export class ChatService {
   }
 
   login(proveedor: string) {
-    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    if (proveedor === 'google') {
+      this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    } else if (proveedor === 'github') {
+      this.auth.signInWithPopup(new firebase.auth.GithubAuthProvider());
+    }
   }
   logout() {
+    this.user = {};
     this.auth.signOut();
   }
 
