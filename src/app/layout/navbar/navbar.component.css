@@ -3,15 +3,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px black;
+  background: none;
 }
 
-.navbar-brand, .navbar-profile {
+.navbar-title,
+.navbar-profile {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .title {
@@ -30,12 +31,16 @@
   }
 }
 
-.nav-item{
+.nav-item {
   list-style: none;
 }
 
-.dropdown-toggle{
+.dropdown-toggle {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+#switch-mode {
+  cursor: pointer;
 }
