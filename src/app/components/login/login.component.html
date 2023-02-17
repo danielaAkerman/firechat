@@ -1,22 +1,36 @@
 <div class="row container">
   <div class="col login-container">
     <br />
-    <p class=".fs-3 text">LOG IN</p>
+    <!-- <p class=".fs-3 text">LOG IN</p> -->
     <form class="text-center">
       <div class="mb-3">
         <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Email address"
+        />
       </div>
       <div class="mb-3">
         <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+        />
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Log In</button>
     </form>
+    <div id="forgot-password" class="form-text">
+      <a href=""> Forgot password? </a>
+    </div>
     <br />
+    <button class="btn btn-success">Create new account</button>
     <br />
-    <div class="form-text mb-1">Ingresá con tu cuenta:</div>
+    <div class="form-text mb-1">Accede con tu cuenta:</div>
     <div class="buttons">
       <button class="btn btn-outline-primary" (click)="ingresar('google')">
         Google
@@ -31,4 +45,3 @@
     <img class="img" src="assets/connection.svg" />
   </div>
 </div>
-

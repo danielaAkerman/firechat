@@ -1,0 +1,16 @@
+.footer{
+    position: fixed;
+    height: 75px;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(28, 132, 116);
+    margin-top: 20px;
+}
+
+@media (max-width: 785px) {
+    .footer {
+        height: 45px;
+        position: relative;
+        margin-bottom: 0;
+    }
+  }

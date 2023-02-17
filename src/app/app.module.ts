@@ -19,10 +19,12 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 
 // Servicios
 import { ChatService } from './providers/chat.service';
+import { WavesComponent } from './layout/waves/waves.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 
 @NgModule({
-  declarations: [AppComponent, ChatComponent, LoginComponent, NavbarComponent],
+  declarations: [AppComponent, ChatComponent, LoginComponent, NavbarComponent, WavesComponent, FooterComponent],
   imports: [
     BrowserModule,
     FormsModule,
