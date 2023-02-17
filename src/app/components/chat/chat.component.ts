@@ -21,6 +21,11 @@ export class ChatComponent implements OnInit {
 
   ngOnInit() {
     this.element = document.getElementById('app-messages');
+
+    // if(localStorage.getItem("theme") == "dark"){
+    //   this._nc.cambiarTema()
+
+    // }
   }
 
   send_message() {
