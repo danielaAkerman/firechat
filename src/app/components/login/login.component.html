@@ -28,20 +28,23 @@
       <a href=""> Forgot password? </a>
     </div>
     <br />
-    <button class="btn btn-success">Create new account</button>
+    <button class="btn btn-success" (click)="newAccount()">
+      Create new account
+    </button>
     <br />
     <div class="form-text mb-1">Accede con tu cuenta:</div>
     <div class="buttons">
-      <button class="btn btn-outline-primary" (click)="ingresar('google')">
+      <button class="btn btn-outline-primary" (click)="logInButton('google')">
         Google
       </button>
-      <button class="btn btn-outline-primary" (click)="ingresar('github')">
+      <button class="btn btn-outline-primary" (click)="logInButton('github')">
         GitHub
       </button>
     </div>
   </div>
 
   <div class="col img-container">
-    <img class="img" src="assets/connection.svg" />
+    <img class="img" src="assets/universe.svg" />
+    <!-- <img class="img" src="assets/connection.svg" /> -->
   </div>
 </div>

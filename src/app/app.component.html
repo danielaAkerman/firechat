@@ -1,20 +1,11 @@
 <div class="container main-container">
-  <app-navbar></app-navbar>
 
+  <app-navbar></app-navbar>
   <hr class="divider" />
 
-  <!-- <div class="col-md-12 text-end" *ngIf="_cs.user.uid">
-    <button class="btn btn-outline-danger" (click)="_cs.logout()">
-      Cerrar sesión
-    </button>
-  </div> -->
-
-  <div *ngIf="!_cs.user.uid">
-    <app-login></app-login>
-  </div>
-
-  <div class="chat-window" *ngIf="_cs.user.uid">
-    <app-chat></app-chat>
-  </div>
+  <router-outlet></router-outlet>
+  
+  <hr class="divider" />
+  <app-footer></app-footer>
+  
 </div>
-<app-footer></app-footer>

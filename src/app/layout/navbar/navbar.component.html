@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="navbar-title">
     <img src="assets/chat.png" alt="Bootstrap" width="30" height="24" />
-    <p class="fs-4 title">Firechat</p>
+    <p class="fs-4 title">FireCHAT</p>
     <img src="assets/moon-fill.svg" id="switch-mode" (click)="cambiarTema()" />
   </div>
 
@@ -18,7 +18,8 @@
       </a>
       <ul class="dropdown-menu">
         <li>
-          <a class="dropdown-item" href="#" (click)="_cs.logout()">
+          <a class="dropdown-item" href="#" (click)="onClick()">
+          <!-- <a class="dropdown-item" href="#" (click)="_cs.logout()"> -->
             Log out
           </a>
         </li>

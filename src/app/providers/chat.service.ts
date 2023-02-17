@@ -5,12 +5,22 @@ import {
 } from '@angular/fire/compat/firestore';
 
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import {
+  Auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+} from '@angular/fire/auth';
 
 import firebase from 'firebase/compat/app';
 
 import { Message } from '../interfaces/message.interface';
 
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -21,8 +31,13 @@ export class ChatService {
   public chats: Message[] = [];
   public user: any = {};
 
-  constructor(private afs: AngularFirestore, public auth: AngularFireAuth) {
-    this.auth.authState.subscribe((u) => {
+  constructor(
+    private afs: AngularFirestore,
+    public fireauth: AngularFireAuth,
+    private auth: Auth,
+    private router: Router
+  ) {
+    this.fireauth.authState.subscribe((u) => {
       if (!u) {
         console.log({ user: null });
         return;
@@ -37,18 +52,40 @@ export class ChatService {
     });
   }
 
-  login(proveedor: string) {
-    if (proveedor === 'google') {
-      this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    } else if (proveedor === 'github') {
-      this.auth.signInWithPopup(new firebase.auth.GithubAuthProvider());
-    }
+  signup({ email, password }: any) {
+    return createUserWithEmailAndPassword(this.auth, email, password);
   }
-  logout() {
+
+  loginEmail({ email, password }: any) {
+    return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+  logInWithGoogle(){
+    return signInWithPopup(this.auth, new GoogleAuthProvider())
+  }
+
+  logInWithGitHub(){
+    return signInWithPopup(this.auth, new GithubAuthProvider())
+  }
+
+  logOut() {
     this.user = {};
     localStorage.setItem('user', this.user.toString());
-    this.auth.signOut();
+    return signOut(this.auth);
   }
+
+  // login(proveedor: string) {
+  //   if (proveedor === 'google') {
+  //     this.fireauth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  //   } else if (proveedor === 'github') {
+  //     this.fireauth.signInWithPopup(new firebase.auth.GithubAuthProvider());
+  //   }
+  // }
+  // logout() {
+  //   this.user = {};
+  //   localStorage.setItem('user', this.user.toString());
+  //   this.fireauth.signOut();
+  // }
 
   getMessages() {
     this.itemsCollection = this.afs.collection<Message>('chat', (ref) =>

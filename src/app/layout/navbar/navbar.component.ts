@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ChatService } from 'src/app/providers/chat.service';
 
@@ -8,11 +9,10 @@ import { ChatService } from 'src/app/providers/chat.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  constructor(public _cs: ChatService) {
-    // document.querySelector('body')!.classList.add('butter-color');
+  constructor(public _cs: ChatService, private router: Router) {
     // Recoge darkmode desde localstorage, aguarda milésimas para implementarlo
     // Sino arroja error el nav
-    if (localStorage.getItem('theme')) {
+    if (localStorage.getItem('darkmode')) {
       let counter = 1;
       const intervalId = setInterval(() => {
         counter--;
@@ -24,31 +24,34 @@ export class NavbarComponent {
     }
   }
 
+  onClick() {
+    this._cs
+      .logOut()
+      .then(() => {
+        this.router.navigate(['/login']);
+      })
+      .catch((error: any) => {
+        console.log(error);
+      });
+  }
+
   temaOscuro() {
     document.querySelector('body')!.setAttribute('data-bs-theme', 'dark');
     document.querySelector('body')!.classList.remove('butter-color');
-    localStorage.setItem('theme', 'dark');
+    localStorage.setItem('darkmode', 'true');
     document
       .getElementById('switch-mode')!
       .setAttribute('src', 'assets/sun-fill.svg');
-
-    // Fondo color ondas
-    const darkwaves = document.querySelector('.hero-waves');
-    darkwaves?.classList.add('darkwaves');
   }
 
   temaClaro() {
     document.querySelector('body')!.setAttribute('data-bs-theme', 'light');
     document.querySelector('body')!.classList.add('butter-color');
 
-    localStorage.removeItem('theme');
+    localStorage.removeItem('darkmode');
     document
       .getElementById('switch-mode')!
       .setAttribute('src', 'assets/moon-fill.svg');
-
-          // Fondo color ondas
-    const darkwaves = document.querySelector('.hero-waves');
-    darkwaves?.classList.remove('darkwaves');
   }
 
   cambiarTema() {
