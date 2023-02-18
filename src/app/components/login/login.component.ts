@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ChatService } from '../../providers/chat.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,18 +9,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  formLogin: FormGroup;
-  constructor(public _cs: ChatService, private router: Router) {
-    this.formLogin = new FormGroup({
-      email: new FormControl(),
-      password: new FormControl(),
+  // formLogin: FormGroup;
+  public form: FormGroup;
+
+  constructor(
+    public _cs: ChatService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {
+    this.form = this.formBuilder.group({
+      email: ['', []],
+      password: ['', []],
     });
   }
 
   onSubmit() {
     this._cs
-      .loginEmail(this.formLogin.value)
-      .then((response) => console.log(response))
+      .loginEmail(this.form.value)
+      .then((response) => {
+        console.log(response);
+        this.router.navigate(['/chat']);
+      })
       .catch((error) => console.log(error));
   }
 
@@ -44,7 +53,7 @@ export class LoginComponent {
     }
   }
 
-  newAccount(){
+  newAccount() {
     this.router.navigate(['/signup']);
   }
 }

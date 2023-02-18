@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent {
-  // public formReg: FormGroup;
   public form: FormGroup;
 
   constructor(
@@ -21,21 +20,15 @@ export class SignupComponent {
       email: ['', []],
       password: ['', []],
     });
-    console.log('VALORES OBTENIDOS', this.form.value);
-    // this.formReg = new FormGroup({
-    //   email: new FormControl('', [], []),
-    //   password: new FormControl('', [], []),
-    // });
   }
 
   onSubmit() {
     console.log(this.form.value);
     this._cs
-      // .signup({email:'dani@gmail.com', password:'123456'})
       .signup(this.form.value)
       .then((response) => {
         console.log(response);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/chat']);
       })
       .catch((error) => console.log(error));
   }

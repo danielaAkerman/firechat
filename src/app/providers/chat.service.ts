@@ -107,7 +107,7 @@ export class ChatService {
 
   uploadMessages(texto: string) {
     let message: Message = {
-      from: this.user.name,
+      from: this.user.name || this.user.email,
       message: texto,
       date: new Date().getTime(),
       uid: this.user.uid,

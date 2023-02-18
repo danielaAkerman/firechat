@@ -2,31 +2,32 @@
   <div class="col login-container">
     <br />
     <!-- <p class=".fs-3 text">LOG IN</p> -->
-    <form class="text-center">
+    <form [formGroup]="form" class="text-center">
       <div class="mb-3">
-        <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
         <input
           type="email"
           class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
+          id="email"
+          formControlName="email"
           placeholder="Email address"
         />
       </div>
+
       <div class="mb-3">
-        <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
         <input
           type="password"
           class="form-control"
-          id="exampleInputPassword1"
           placeholder="Password"
+          id="password"
+          formControlName="password"
         />
       </div>
-      <button type="submit" class="btn btn-primary">Log In</button>
+      <button class="btn btn-primary" (click)="onSubmit()">Log In</button>
     </form>
     <div id="forgot-password" class="form-text">
       <a href=""> Forgot password? </a>
     </div>
+
     <br />
     <button class="btn btn-success" (click)="newAccount()">
       Create new account

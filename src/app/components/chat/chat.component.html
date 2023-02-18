@@ -1,12 +1,12 @@
 <div class="app-messages" id="app-messages">
   <div
     *ngFor="let chat of _cs.chats"
-    [ngClass]="{ 'text-end mine': _cs.user.uid == chat.uid, 
-                         'other': _cs.user.uid != chat.uid }"
+    [ngClass]="{
+      'text-end mine': _cs.user.uid == chat.uid,
+      other: _cs.user.uid != chat.uid
+    }"
   >
-    <span class="fst-italic fw-light"
-
-    >{{ chat.from }}</span>
+    <span class="fst-italic fw-light">{{ chat.from }}</span>
     <p class="text-message">{{ chat.message }}</p>
   </div>
 </div>
