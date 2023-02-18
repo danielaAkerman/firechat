@@ -4,11 +4,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../components/login/login.component';
 import { ChatComponent } from '../components/chat/chat.component';
 import { SignupComponent } from '../components/signup/signup.component';
-import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import {
+  canActivate,
+  redirectUnauthorizedTo,
+  redirectLoggedInTo,
+} from '@angular/fire/auth-guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+    ...canActivate(() => redirectLoggedInTo(['/chat'])),
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+    ...canActivate(() => redirectLoggedInTo(['/chat'])),
+  },
   { path: '', redirectTo: '/chat', pathMatch: 'full' },
   {
     path: 'chat',
