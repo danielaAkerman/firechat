@@ -10,6 +10,7 @@
           placeholder="Email address"
         />
       </div>
+
       <div class="mb-3">
          <input
           type="password"
@@ -20,33 +21,33 @@
       </div> -->
 
     <!-- <button class="btn btn-primary">Sign Up</button> -->
+    <!-- </form> -->
 
-    <form>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
+    <form [formGroup]="form" class="m-2">
+
+      <div class="form-group">
+        <label for="email">Email</label>
         <input
           type="email"
-          class="form-control form-control-sm"
+          class="form-control"
+          placeholder="Email"
           id="email"
           formControlName="email"
         />
       </div>
 
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
+      <div class="form-group">
+        <label for="password">Password</label>
         <input
           type="password"
-          class="form-control form-control-sm"
+          class="form-control"
+          placeholder="password"
           id="password"
           formControlName="password"
         />
       </div>
+      <button class="btn btn-primary" (click)="onSubmit()">Sign Up</button>
 
-      <div class="d-grid my-4">
-        <button type="submit" class="btn btn-primary" (click)="onSubmit()">
-          Registrarse
-        </button>
-      </div>
     </form>
   </div>
 

@@ -60,12 +60,12 @@ export class ChatService {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  logInWithGoogle(){
-    return signInWithPopup(this.auth, new GoogleAuthProvider())
+  logInWithGoogle() {
+    return signInWithPopup(this.auth, new GoogleAuthProvider());
   }
 
-  logInWithGitHub(){
-    return signInWithPopup(this.auth, new GithubAuthProvider())
+  logInWithGitHub() {
+    return signInWithPopup(this.auth, new GithubAuthProvider());
   }
 
   logOut() {

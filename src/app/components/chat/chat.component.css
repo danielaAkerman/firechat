@@ -21,15 +21,19 @@ input {
 .other {
   width: fit-content;
   max-width: 300px;
-  /* border: 1px solid; */
   padding: 5px;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 .mine {
   border-radius: 20px 0px 20px 20px;
   margin: auto 0px 2px auto;
   /* background-color: rgba(161, 255, 142, 0.24); */
   padding-left: 10px;
+  box-shadow: -5px 5px 20px rgba(0, 0, 0,0.1);
 }
 
 .other {
@@ -37,6 +41,7 @@ input {
   margin: auto 0px 2px 0px;
   /* background-color: rgba(142, 238, 255, 0.24); */
   padding-right: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0,0.1);
 }
 
 .text-message {

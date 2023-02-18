@@ -6,7 +6,7 @@
   </div>
 
   <div class="navbar-profile" *ngIf="_cs.user.uid">
-    <li class="nav-item dropdown">
+    <li *ngIf="_cs.user.name" class="nav-item dropdown">
       <a
         class="nav-link dropdown-toggle"
         href="#"
@@ -26,7 +26,7 @@
       </ul>
     </li>
     <div class="img-profile-container">
-      <img [src]="_cs.user.thumbnail" class="img-profile" alt="Profile" />
+      <img *ngIf="_cs.user.thumbnail" [src]="_cs.user.thumbnail" class="img-profile" alt="Profile" />
     </div>
   </div>
 </nav>
