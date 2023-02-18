@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 import { ChatService } from '../../providers/chat.service';
 import { Router } from '@angular/router';
 
@@ -17,9 +22,27 @@ export class SignupComponent {
     private formBuilder: FormBuilder
   ) {
     this.form = this.formBuilder.group({
-      email: ['', []],
-      password: ['', []],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
+
+    // const control = new FormControl('1', Validators.pattern('[a-zA-Z ]*'));
+  }
+
+  get Password() {
+    return this.form.get('password');
+  }
+  get Email() {
+    return this.form.get('email');
+  }
+
+  onEnviar(event: Event) {
+    event.preventDefault;
+    if (this.form.valid) {
+      console.log('Enviar al servidor');
+    } else {
+      this.form.markAllAsTouched();
+    }
   }
 
   onSubmit() {

@@ -2,7 +2,7 @@
   <div class="col login-container">
     <br />
     <!-- <p class=".fs-3 text">LOG IN</p> -->
-    <form [formGroup]="form" class="text-center">
+    <form [formGroup]="form" (ngSubmit)="onEnviar($event)" class="text-center">
       <div class="mb-3">
         <input
           type="email"
@@ -11,6 +11,13 @@
           formControlName="email"
           placeholder="Email address"
         />
+        <!-- VALIDATORS -->
+        <div *ngIf="Email?.errors && Email?.touched">
+          <p *ngIf="Email?.hasError('required')" class="text-danger">
+            El email es requerido.
+          </p>
+        </div>
+        <!-- END VALIDATORS -->
       </div>
 
       <div class="mb-3">
@@ -21,9 +28,20 @@
           id="password"
           formControlName="password"
         />
+        <!-- VALIDATORS -->
+        <div *ngIf="Password?.errors && Password?.touched">
+          <p *ngIf="Password?.hasError('required')" class="text-danger">
+            El password es requerido.
+          </p>
+          <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+            El password debe ser de 8 o más caracteres.
+          </p>
+        </div>
+        <!-- END VALIDATORS -->
       </div>
       <button class="btn btn-primary" (click)="onSubmit()">Log In</button>
     </form>
+
     <div id="forgot-password" class="form-text">
       <a href=""> Forgot password? </a>
     </div>
@@ -46,6 +64,5 @@
 
   <div class="col img-container">
     <img class="img" src="assets/universe.svg" />
-    <!-- <img class="img" src="assets/connection.svg" /> -->
   </div>
 </div>
