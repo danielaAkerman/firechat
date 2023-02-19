@@ -57,7 +57,14 @@ export class LoginComponent {
         console.log(response);
         this.router.navigate(['/chat']);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        if (error.toString().includes('user-not-found')) {
+          alert('ERROR, User not found');
+        } else if (error.toString().includes('password')) {
+          alert('ERROR, Wrong password');
+        }
+      });
   }
 
   logInButton(proveedor: string) {

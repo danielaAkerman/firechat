@@ -29,7 +29,7 @@ export class SignupComponent {
         [
           Validators.required,
           Validators.minLength(8),
-          Validators.pattern('(?=.*[a-z])(?=.*[!#$%&/?]).{8,}'),
+          Validators.pattern('(?=.*[a-zA-Z])(?=.*[!#$%&/?]).{8,}'),
         ],
       ],
     });
