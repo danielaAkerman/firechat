@@ -58,10 +58,13 @@
         <!-- VALIDATORS -->
         <div *ngIf="Password?.errors && Password?.touched">
           <p *ngIf="Password?.hasError('required')" class="text-danger">
-            El password es requerido.
+            La contraseña es requerido.
           </p>
           <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
-            El password debe ser de 8 o más caracteres.
+            La contraseña debe ser de 8 o más caracteres.
+          </p>
+          <p *ngIf="Password?.errors?.['pattern']" class="text-danger">
+            La contraseña debe contener al menos uno de los siguientes caracteres: !#$%&/?
           </p>
         </div>
         <!-- END VALIDATORS -->
