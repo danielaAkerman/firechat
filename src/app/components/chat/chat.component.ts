@@ -10,6 +10,7 @@ import { ChatService } from 'src/app/providers/chat.service';
 export class ChatComponent implements OnInit {
   message: string = '';
   element: any;
+  dark: boolean = false; // Para saber si estoy en darkmode
 
   constructor(public _cs: ChatService) {
     this._cs.getMessages().subscribe(() => {
@@ -17,6 +18,12 @@ export class ChatComponent implements OnInit {
         this.element.scrollTop = this.element.scrollHeight;
       }, 0);
     });
+
+    if (
+      document.querySelector('body')!.getAttribute('data-bs-theme') == 'dark'
+    ) {
+      this.dark = true; // Para cambiar el color de las letras del input
+    }
   }
 
   ngOnInit() {

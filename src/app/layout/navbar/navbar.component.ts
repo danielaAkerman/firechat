@@ -35,9 +35,11 @@ export class NavbarComponent {
       });
   }
 
+  public body = document.querySelector('body')!;
+
   temaOscuro() {
-    document.querySelector('body')!.setAttribute('data-bs-theme', 'dark');
-    document.querySelector('body')!.classList.remove('butter-color');
+    this.body.setAttribute('data-bs-theme', 'dark');
+    this.body.classList.remove('butter-color');
     localStorage.setItem('darkmode', 'true');
     document
       .getElementById('switch-mode')!
@@ -45,9 +47,8 @@ export class NavbarComponent {
   }
 
   temaClaro() {
-    document.querySelector('body')!.setAttribute('data-bs-theme', 'light');
-    document.querySelector('body')!.classList.add('butter-color');
-
+    this.body.setAttribute('data-bs-theme', 'light');
+    this.body.classList.add('butter-color');
     localStorage.removeItem('darkmode');
     document
       .getElementById('switch-mode')!
@@ -55,7 +56,7 @@ export class NavbarComponent {
   }
 
   cambiarTema() {
-    document.querySelector('body')!.getAttribute('data-bs-theme') === 'light'
+    this.body.getAttribute('data-bs-theme') === 'light'
       ? this.temaOscuro()
       : this.temaClaro();
   }

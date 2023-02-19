@@ -20,4 +20,7 @@
   [(ngModel)]="message"
   (keyup.enter)="send_message()"
   placeholder="Nuevo mensaje"
+  [ngClass]="{
+    'dark-input': dark
+  }"
 />

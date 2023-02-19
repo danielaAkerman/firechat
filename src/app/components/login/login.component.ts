@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   public form: FormGroup;
+  dark: boolean = false; // Para saber si estoy en darkmode
 
   constructor(
     public _cs: ChatService,
@@ -25,6 +26,12 @@ export class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
+
+    if (
+      document.querySelector('body')!.getAttribute('data-bs-theme') == 'dark'
+    ) {
+      this.dark = true; // Para cambiar el color de las letras del input
+    }
   }
 
   get Password() {

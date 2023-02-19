@@ -74,19 +74,6 @@ export class ChatService {
     return signOut(this.auth);
   }
 
-  // login(proveedor: string) {
-  //   if (proveedor === 'google') {
-  //     this.fireauth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-  //   } else if (proveedor === 'github') {
-  //     this.fireauth.signInWithPopup(new firebase.auth.GithubAuthProvider());
-  //   }
-  // }
-  // logout() {
-  //   this.user = {};
-  //   localStorage.setItem('user', this.user.toString());
-  //   this.fireauth.signOut();
-  // }
-
   getMessages() {
     this.itemsCollection = this.afs.collection<Message>('chat', (ref) =>
       ref.orderBy('date', 'desc').limit(24)

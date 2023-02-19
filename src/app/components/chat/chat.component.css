@@ -2,15 +2,16 @@ input {
   width: 100%;
   border: none;
   margin-bottom: 5px;
+  background: none !important;
+}
+
+.dark-input {
+  color: #ADB5BD
 }
 
 .app-messages {
   height: calc(100vh - 220px);
   overflow: scroll;
-}
-
-input {
-  background: none !important;
 }
 
 .text-end {
@@ -33,7 +34,7 @@ input {
   margin: auto 0px 2px auto;
   /* background-color: rgba(161, 255, 142, 0.24); */
   padding-left: 10px;
-  box-shadow: -5px 5px 20px rgba(0, 0, 0,0.1);
+  box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .other {
@@ -41,7 +42,7 @@ input {
   margin: auto 0px 2px 0px;
   /* background-color: rgba(142, 238, 255, 0.24); */
   padding-right: 10px;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0,0.1);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .text-message {

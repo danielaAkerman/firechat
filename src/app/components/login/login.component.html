@@ -10,6 +10,9 @@
           id="email"
           formControlName="email"
           placeholder="Email address"
+          [ngClass]="{
+            'dark-input': dark
+          }"
         />
         <!-- VALIDATORS -->
         <div *ngIf="Email?.errors && Email?.touched">
@@ -27,6 +30,9 @@
           placeholder="Password"
           id="password"
           formControlName="password"
+          [ngClass]="{
+            'dark-input': dark
+          }"
         />
         <!-- VALIDATORS -->
         <div *ngIf="Password?.errors && Password?.touched">
