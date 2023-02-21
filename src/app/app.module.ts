@@ -18,7 +18,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 // Servicios
 import { ChatService } from './providers/chat.service';
 import { FooterComponent } from './layout/footer/footer.component';
-import { SignupComponent } from './components/signup/signup.component';
+// import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { SignupComponent } from './components/signup/signup.component';
     LoginComponent,
     NavbarComponent,
     FooterComponent,
-    SignupComponent,
+    // SignupComponent,
   ],
   imports: [
     BrowserModule,

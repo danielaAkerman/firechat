@@ -16,10 +16,15 @@ const routes: Routes = [
     component: LoginComponent,
     ...canActivate(() => redirectLoggedInTo(['/chat'])),
   },
-  {
+  // {
+  //   path: 'signup',
+  //   component: SignupComponent,
+  //   ...canActivate(() => redirectLoggedInTo(['/chat'])),
+  // },
+  { // LAZY LOADING
     path: 'signup',
-    component: SignupComponent,
-    ...canActivate(() => redirectLoggedInTo(['/chat'])),
+    loadChildren: () =>
+      import('../components/signup/signup.module').then((m) => m.SignupModule),
   },
   { path: '', redirectTo: '/chat', pathMatch: 'full' },
   {
