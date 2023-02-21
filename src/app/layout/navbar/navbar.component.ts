@@ -39,7 +39,7 @@ export class NavbarComponent {
 
   temaOscuro() {
     this.body.setAttribute('data-bs-theme', 'dark');
-    this.body.classList.remove('butter-color');
+    this.body.classList.remove('light-mode');
     localStorage.setItem('darkmode', 'true');
     document
       .getElementById('switch-mode')!
@@ -48,7 +48,7 @@ export class NavbarComponent {
 
   temaClaro() {
     this.body.setAttribute('data-bs-theme', 'light');
-    this.body.classList.add('butter-color');
+    this.body.classList.add('light-mode');
     localStorage.removeItem('darkmode');
     document
       .getElementById('switch-mode')!
