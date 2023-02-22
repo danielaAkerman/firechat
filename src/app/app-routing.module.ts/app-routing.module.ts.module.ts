@@ -11,17 +11,23 @@ import {
 } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
+  // {
+  //   path: 'login',
+  //   component: LoginComponent,
+  //   ...canActivate(() => redirectLoggedInTo(['/chat'])),
+  // },
   {
     path: 'login',
-    component: LoginComponent,
-    ...canActivate(() => redirectLoggedInTo(['/chat'])),
+    loadChildren: () =>
+      import('../components/login/login.module').then((m) => m.LoginModule),
   },
   // {
   //   path: 'signup',
   //   component: SignupComponent,
   //   ...canActivate(() => redirectLoggedInTo(['/chat'])),
   // },
-  { // LAZY LOADING
+  {
+    // LAZY LOADING
     path: 'signup',
     loadChildren: () =>
       import('../components/signup/signup.module').then((m) => m.SignupModule),
