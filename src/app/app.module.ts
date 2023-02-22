@@ -11,7 +11,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModuleTsModule } from './app-routing.module.ts/app-routing.module.ts.module';
 
 // Componentes
-import { ChatComponent } from './components/chat/chat.component';
+// import { ChatComponent } from './components/chat/chat.component';
 import { FooterComponent } from './layout/footer/footer.component';
 // import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
@@ -23,7 +23,7 @@ import { ChatService } from './providers/chat.service';
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent,
+    // ChatComponent,
     // LoginComponent,
     NavbarComponent,
     FooterComponent,
