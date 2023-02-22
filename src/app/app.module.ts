@@ -13,7 +13,7 @@ import { AppRoutingModuleTsModule } from './app-routing.module.ts/app-routing.mo
 // Componentes
 import { ChatComponent } from './components/chat/chat.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';
+// import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 // import { SignupComponent } from './components/signup/signup.component';
 
@@ -24,7 +24,7 @@ import { ChatService } from './providers/chat.service';
   declarations: [
     AppComponent,
     ChatComponent,
-    LoginComponent,
+    // LoginComponent,
     NavbarComponent,
     FooterComponent,
     // SignupComponent,
